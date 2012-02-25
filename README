@@ -1,0 +1,14 @@
+This script is a wrapper script, that can be safely used at multiple levels (wrappers calling wrappers, if you need).
+
+This is an example of looping through arguments and shoving them into an array, so that bash will properly preserve the fact that $thing was a single argument.
+
+For example:
+If you are sending two arguments to a program:
+'one argument like this*' 'and arg 2 --like --this'
+
+bash will turn it in to 9 arguments if your wrapper simply execs $@. 
+Try it, it's really frustrating.
+
+This script results in:
++ exec /usr/local/bin/myprogram 'one argument like this*' 'and arg 2 --like --this'
+
