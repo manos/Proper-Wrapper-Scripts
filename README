@@ -12,3 +12,5 @@ Try it, it's really frustrating.
 This script results in:
 + exec /usr/local/bin/myprogram 'one argument like this*' 'and arg 2 --like --this'
 
+This is important when sending commands via ssh - the single quotes are required, to denote that "this entire command is one argument to ssh."
+
